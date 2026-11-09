@@ -1,0 +1,25 @@
+# WebAuto 框架全局配置
+# 说明：值支持 ${ENV_VAR} 环境变量替换，例如 api_key: ${AI_API_KEY}
+
+browser:
+  type: chromium            # chromium | firefox | webkit
+  headless: true            # 无头模式（CI 推荐 true）
+  timeout: 30               # 元素等待超时（秒）
+  viewport:
+    width: 1280
+    height: 800
+
+# 默认被测站点（可被 --env 指定的环境覆盖）
+base_url: https://example.com
+
+ai:
+  # 生成测试用例时使用的模型（OpenAI 兼容接口）
+  provider: openai          # openai | custom
+  api_key: ${AI_API_KEY}    # 不配置则自动回退到模板生成
+  base_url: https://api.openai.com/v1
+  model: gpt-4o-mini
+  temperature: 0.3
+
+report:
+  dir: reports
+  title: Web Automation Test Report

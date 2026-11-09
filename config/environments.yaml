@@ -1,0 +1,16 @@
+# 多环境地址配置，运行用例时使用：pytest --env test
+default:
+  base_url: https://example.com
+  headless: true
+
+dev:
+  base_url: https://dev.example.com
+  headless: true
+
+test:
+  base_url: https://test.example.com
+  headless: true
+
+prod:
+  base_url: https://example.com
+  headless: true
